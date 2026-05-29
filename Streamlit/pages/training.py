@@ -54,7 +54,11 @@ if uploaded_file is not None:
                 random_state=42
             )
 
-            model = RandomForestClassifier()
+            model = RandomForestClassifier(
+                n_estimators=50,
+                max_depth=10,
+                n_jobs=-1
+            )
 
             model.fit(X_train, y_train)
 
